@@ -1,0 +1,11 @@
+{%extends "base.html" %} {%block title%}members{%endblock%} {%block content%}
+{{post_form.errors }} {{ message }}
+<form method="post">
+	{% csrf_token %}
+	<label for="court_name">name</label>
+	{{post_form.court_name }}
+	<label for="ground_type">ground</label>
+	{{ post_form.ground_type }}
+	<input type="submit" value="submit" />
+</form>
+{%endblock%}

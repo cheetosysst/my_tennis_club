@@ -1,0 +1,13 @@
+{%extends "base.html" %} {%block title%}members{%endblock%} {%block content%}
+{{post_form.errors }} {{ message }}
+<div style="display: flex; flex-direction: column">
+	{%for crt in courts%}
+	<p>
+		<a href="/court/details/{{crt.name}}"> {{crt.name}} </a> {{"->"}}
+		<a href="/court/book/{{crt.name}}">book this court!</a>
+	</p>
+	{% endfor %}
+</div>
+<p>Back to <a href="/">HOME</a></p>
+
+{%endblock%}

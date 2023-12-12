@@ -1,0 +1,19 @@
+{%extends "base.html" %} {%block title%}members{%endblock%} {%block content%}
+{{post_form.errors }} {{ message }}
+<form action="." method="post">
+	{% csrf_token %}
+	<label for="username">Username: </label>
+	{{ post_form.username }}
+	<label for="password">Password: </label>
+	{{ post_form.password }}
+	<label for="phone">phone: </label>
+	{{ post_form.phone }}
+	<label for="age">age: </label>
+	{{ post_form.age }}
+	<label for="firstname">firstname: </label>
+	{{ post_form.firstname }}
+	<label for="lastname">lastname: </label>
+	{{ post_form.lastname }}
+	<input type="submit" value="Submit" />
+</form>
+{%endblock%}

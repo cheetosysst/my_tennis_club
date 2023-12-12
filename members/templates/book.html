@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block title %}booking {{ court }}{%endblock%}
+{%block content%} {{post_form.errors }} {{ message }}
+<form method="post">
+	{% csrf_token %}
+	<label for="date">date: </label>
+	{{ post_form.date }}
+	<input type="submit" value="Submit" />
+</form>
+<p>Back to <a href="/court">court</a></p>
+
+{%endblock%}

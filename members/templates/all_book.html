@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %} My Tennis Club - List of all
+reservations {% endblock %} {% block content %}
+
+<p><a href="/">HOME</a></p>
+
+<h1>Adult Members</h1>
+
+<ul>
+	{% for x in book %}
+	<li>
+		<a href="/members/details/{{ x.member.user.id }}">
+			{{ x.member.firstname }} {{ x.member.lastname }}
+		</a>
+		booked
+		<a href="/court/details/{{ x.court.name }}"> {{ x.court.name }} </a> on
+		{{ x.date }}
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

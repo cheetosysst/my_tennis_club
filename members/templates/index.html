@@ -1,0 +1,10 @@
+{%extends "base.html" %} {%block title%}members{%endblock%} {%block content%}
+<h1>Members</h1>
+
+<ul>
+	{% for x in members %}
+	<li>{{ x.firstname }} {{ x.lastname }}</li>
+	{% endfor %}
+</ul>
+
+{%endblock%}

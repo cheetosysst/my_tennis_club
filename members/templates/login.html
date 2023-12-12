@@ -1,0 +1,13 @@
+{%extends "base.html" %} {%block title%}members{%endblock%} {%block content%}
+{{post_form.errors }} {{ message }} {% if request.user.is_authenticated %}
+<a href="/logout">Logout</a>
+{% else %}
+<form action="." method="post">
+	{% csrf_token %}
+	<label for="username">Username: </label>
+	{{ post_form.username }}
+	<label for="password">Password: </label>
+	{{ post_form.password }}
+	<input type="submit" value="Submit" />
+</form>
+{% endif %} {%endblock%}
